@@ -1,0 +1,19 @@
+$reaction: hsl(0, 100%, 67%);
+$memory: hsl(39, 100%, 56%);
+$verbal: hsl(166, 100%, 37%);
+$visual: hsl(234, 85%, 45%);
+
+$bg-1:hsl(252, 100%, 67%);
+$bg-2: hsl(241, 81%, 54%);
+
+$bg-gradient: linear-gradient(to bottom, $bg-1, $bg-2);
+
+$circle-1: hsla(256, 72%, 46%, 1);
+$circle-2:hsla(241, 72%, 46%, 0);
+
+$circle-gradient: linear-gradient(to bottom, $circle-1, $circle-2);
+
+$white:  hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$lavender:  hsl(241, 100%, 89%);
+$dark: hsl(224, 30%, 27%);

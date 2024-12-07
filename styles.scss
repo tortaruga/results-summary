@@ -1,0 +1,214 @@
+@use "sass:math";
+@import '_colors.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: font; 
+    color: $dark;  
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ 
+h1 {
+    margin: 0; 
+}
+
+a {
+    text-decoration: none;  
+    color: $visual;
+    &:hover {
+        color: $memory; 
+    }
+}
+
+@font-face {
+    font-family: 'font';
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+@function px-to-rem($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+
+@mixin category-colors($color) {
+    color: $color;
+    background-color: rgba($color: $color, $alpha: .05);
+}
+
+.container {
+    background-color: $white; 
+    display: flex;
+    flex-wrap: wrap;
+    max-width: px-to-rem(700);
+    margin: auto;
+    
+}
+
+.result-display {
+    background: $bg-gradient;  
+    border-radius: 0 0 2rem 2rem;   
+    padding: 1.5rem; 
+    color: $white;
+    text-align: center; 
+    flex-grow: 1;
+    flex-basis: 50%;  
+    min-width: px-to-rem(280);
+}
+
+// .result {
+//     background: $circle-gradient; 
+//     border-radius: 50%; 
+//     aspect-ratio: 1; 
+//     width: auto;    
+//     margin: auto;  
+//     display: flex;
+//     justify-content: center;
+//     align-items: center; 
+//     max-width: px-to-rem(180);         
+//     margin-block: 1.5rem;      
+// }
+
+.score { 
+    font-size: 3rem;       
+    font-weight: 800;
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    width: max-content; 
+    margin: 2rem auto;  
+    z-index: 0; 
+
+    &::after {
+        position: absolute;
+        content: ''; 
+        border-radius: 50%;
+        aspect-ratio: 1;
+        width: 250%;        
+        background: $circle-gradient; 
+        z-index: -1;
+        top: -25%;   
+        left: -70%;   
+    }
+} 
+
+.score-span {
+    color: $lavender; 
+    font-size: 18px; 
+    font-weight: normal;   
+}
+
+.result-heading {
+    color: $lavender;
+    font-size: 18px;    
+}
+
+.txt-comment {
+    color: $lavender;  
+    font-size: 18px; 
+    max-width: px-to-rem(280); 
+    margin: auto; 
+}
+
+.summary-display {
+    flex-grow: 1; 
+    padding: 1.5rem;  
+    flex-basis: 50%; 
+    min-width: px-to-rem(280);
+}
+
+.summary-heading {
+    font-size: 1rem;  
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  
+    margin-block: 1rem; 
+    gap: .75rem;  
+} 
+
+.category {
+    border-radius: .5rem; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding-inline: .75rem;  
+}
+
+.category-group {
+    display: flex;
+    gap: .75rem;  
+}
+
+.reaction  {
+    @include category-colors($reaction);  
+}  
+
+.memory {
+    @include category-colors($memory); 
+}
+
+.verbal {
+    @include category-colors($verbal); 
+}
+
+.visual {
+    @include category-colors($visual); 
+}
+
+.category-score {
+    color: $dark;
+    font-weight: 700;     
+}
+
+.category-span { 
+    color: rgb(175, 175, 175);    
+}  
+
+.continue-btn {
+    width: 100%;
+    background-color: $dark; 
+    color: $white;
+    border-radius: 1.5rem; 
+    padding: .75rem;   
+    font-family: inherit;  
+    margin-block: .5rem;     
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1rem; 
+
+    &:hover {
+        background: $bg-gradient;
+    }
+} 
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: .8rem;
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        box-shadow: 5px 5px 15px gainsboro;
+        border-radius: 2rem;   
+        margin-block-start: 4rem;       
+    }
+
+    .result-display {
+        border-radius: 2rem; 
+    }
+}
