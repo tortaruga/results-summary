@@ -45,6 +45,9 @@ a:hover {
   flex-grow: 1;
   flex-basis: 50%;
   min-width: 17.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .score {
@@ -72,18 +75,18 @@ a:hover {
 
 .score-span {
   color: hsl(241, 100%, 89%);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
 }
 
 .result-heading {
   color: hsl(241, 100%, 89%);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .txt-comment {
   color: hsl(241, 100%, 89%);
-  font-size: 18px;
+  font-size: 1.125rem;
   max-width: 17.5rem;
   margin: auto;
 }
@@ -172,7 +175,7 @@ footer {
   font-size: 0.8rem;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 36rem) {
   body {
     padding: 1rem;
   }
